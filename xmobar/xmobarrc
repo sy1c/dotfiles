@@ -1,0 +1,47 @@
+Config { 
+    -- appearance
+      font = "xft:MesloLGM Nerd Font Mono:pixelsize=12:bold"
+    , additionalFonts = ["xft:MesloLGM Nerd Font Mono:pixelsize=21"]
+    , bgColor = "#D8DEE9"
+    , fgColor = "#2E3440"
+    , position = TopW L 100
+    , textOffset = 15
+    , textOffsets = [18]
+
+    -- general behavior
+    , overrideRedirect = False
+    , lowerOnStart = True
+    , hideOnStart = False
+    , allDesktops = True
+    , persistent = True
+
+    -- plugins
+    , commands = [ 
+        -- battery monitor
+        Run BatteryP ["BAT1"]
+            [ "-t", "<acstatus> <left>"
+            , "-S", "true"
+            , "-L", "20", "-l", "#BF616A"
+            , "--"
+            , "-O", "<fn=1>\xf1e6</fn>"
+            , "-o", "<fn=1>\xf240</fn>"
+            , "-i", "<fn=1>\xf1e6</fn>"
+            ] 50
+
+        -- network monitor
+        , Run Wireless "wlp3s0"
+            [ "-t", "<fn=1>\xfaa8</fn> <essid>"
+            , "-x", "-"
+            ] 10
+                        
+        -- time and date indicator
+        , Run Date "<fn=1>\xf5ef</fn> %Y-%m-%d %H:%M" "date" 10
+                    
+        , Run UnsafeXMonadLog
+        ]
+
+    -- layout
+    , sepChar  = "%"
+    , alignSep = "}{"
+    , template = "  %UnsafeXMonadLog% }{ %battery% | %wlp3s0wi% | %date%  "
+}
