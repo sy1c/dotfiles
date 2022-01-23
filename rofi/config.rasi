@@ -1,5 +1,6 @@
 configuration { 
     theme: "./themes/theme.rasi";
+    terminal: "kitty";
     show-icons: true;
 
 /*	modi: "window,run,ssh";*/
@@ -13,7 +14,6 @@ configuration {
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
-/*	terminal: "rofi-sensible-terminal";*/
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
 /*	run-command: "{cmd}";*/
