@@ -1,40 +1,39 @@
 * {
-    background-color: #2E3440;
-    border-color: #4C566A;
-    text-color: #ECEFF4;
+    background-color: #D8DEE9;
+    border-color: #D8DEE9;
+    text-color: #2E3440;
     font: "MesloLGM Nerd Font Mono Bold 9";
     margin: 0px;
     padding: 0px;
 }
 
 #window {
-    anchor:     north west;
-    location:   north west;
-    width:      75%;
-    children:   [ horibox ];
+    anchor: north west;
+    location: north west;
+    width: 75%;
+    children: [ horibox ];
 }
 
 #horibox {
     orientation: horizontal;
-    children:   [ prompt, entry, listview ];
+    children: [ prompt, entry, listview ];
 }
 
 #listview {
-    layout:     horizontal;
-    margin: 0px 16px;
-    lines:      100;
+    layout: horizontal;
+    lines: 100;
 }
 
 #entry {
-    expand:     false;
-    background-color: #ECEFF4;
-    text-color: #2E3440;
-    width:      15em;
+    expand: false;
+    background-color: #2E3440;
+    text-color: #ECEFF4;
+    width: 15em;
     padding: 2px 8px 2px 8px;
 }
 
 #element {
-    padding: 3px 8px 2px 8px;
+    padding: 3px 16px 2px 16px;
 }
 
 #element selected {
