@@ -1,11 +1,11 @@
 Config { 
     -- appearance
       font = "xft:MesloLGM Nerd Font Mono:pixelsize=12:bold"
-    , additionalFonts = ["xft:MesloLGM Nerd Font Mono:pixelsize=21"]
+    , additionalFonts = ["xft:MesloLGM Nerd Font Mono:pixelsize=20"]
     , bgColor = "#D8DEE9"
     , fgColor = "#2E3440"
     , position = TopW L 100
-    , textOffset = 15
+    , textOffset = 16
     , textOffsets = [18]
 
     -- general behavior
@@ -43,5 +43,5 @@ Config {
     -- layout
     , sepChar  = "%"
     , alignSep = "}{"
-    , template = "  %UnsafeXMonadLog% }{ %battery% | %wlp3s0wi% | %date%  "
+    , template = "  %UnsafeXMonadLog% }{  %battery%  |  %wlp3s0wi%  |  %date%  "
 }
