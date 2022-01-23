@@ -121,8 +121,8 @@ myManageHook = composeAll
 -- xmobar settings ------------------------------------------------------------
 myPP :: PP
 myPP = def 
-    { ppCurrent = xmobarColor color07 color04 . xmobarBorder "Top" color04 2
-    , ppHidden = xmobarColor color01 "" . xmobarBorder "Top" color04 2
+    { ppCurrent = xmobarColor color07 color01 . xmobarBorder "Top" color01 4
+    , ppHidden = xmobarColor color01 "" . xmobarBorder "Top" color01 2
     , ppHiddenNoWindows = xmobarColor color01 ""
     , ppOrder = \(ws:_:t:_) -> [ws,t]
     , ppSep = "  |  "
@@ -138,5 +138,5 @@ myKeys =
     , ("<XF86AudioLowerVolume>", spawn "amixer set Master 2%- unmute")
     , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 2%+ unmute")
     , ("<XF86AudioMute>", spawn "amixer set Master toggle")
-    , ("M-p", spawn "rofi -show combi -modi combi")
+    , ("M-r", spawn "rofi -show drun")
     ]

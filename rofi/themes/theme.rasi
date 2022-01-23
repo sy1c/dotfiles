@@ -1,0 +1,48 @@
+* {
+    background-color: #2E3440;
+    border-color: #4C566A;
+    text-color: #ECEFF4;
+    font: "MesloLGM Nerd Font Mono Bold 9";
+    margin: 0px;
+    padding: 0px;
+}
+
+#window {
+    anchor:     north west;
+    location:   north west;
+    width:      75%;
+    children:   [ horibox ];
+}
+
+#horibox {
+    orientation: horizontal;
+    children:   [ prompt, entry, listview ];
+}
+
+#listview {
+    layout:     horizontal;
+    margin: 0px 16px;
+    lines:      100;
+}
+
+#entry {
+    expand:     false;
+    background-color: #ECEFF4;
+    text-color: #2E3440;
+    width:      15em;
+    padding: 2px 8px 2px 8px;
+}
+
+#element {
+    padding: 3px 8px 2px 8px;
+}
+
+#element selected {
+    background-color: #88C0D0;
+    text-color: #2E3440;
+}
+
+#prompt {
+    background-color: #BF616A;
+    padding: 2px 8px 2px 8px;
+}
