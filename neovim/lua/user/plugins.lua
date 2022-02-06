@@ -32,6 +32,7 @@ return packer.startup(function(use)
     use "wbthomason/packer.nvim"
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
+    use "arcticicestudio/nord-vim"
 
     -- automatically set up your configuration after cloning packer.nvim
     -- put this at the end after all plugins
