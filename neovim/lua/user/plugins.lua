@@ -32,7 +32,13 @@ return packer.startup(function(use)
     use "wbthomason/packer.nvim"
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
+    
     use "arcticicestudio/nord-vim"
+
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
 
     -- automatically set up your configuration after cloning packer.nvim
     -- put this at the end after all plugins
