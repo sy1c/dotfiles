@@ -1,12 +1,12 @@
-local configs = require("nvim-treesitter.configs")
+local configs = require('nvim-treesitter.configs')
 configs.setup {
-    ensure_installed = "maintained",
+    ensure_installed = 'maintained',
     sync_install = false, 
-    ignore_install = { "" },
+    ignore_install = { '' },
   
     highlight = {
         enable = true,
-        disable = { "" },
+        disable = { '' },
         additional_vim_regex_highlighting = true,
     },
 
