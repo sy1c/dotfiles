@@ -1,48 +1,30 @@
--- install packer
-local install_path = vim.fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-    PACKER_BOOTSTRAP = vim.fn.system {
-        "git",
-        "clone",
-        "--depth",
-        "1",
-        "https://github.com/wbthomason/packer.nvim",
-        install_path,
-    }
-    print "Installing Packer..."
-    vim.cmd [[packadd packer.nvim]]
-end
-
--- reload neovim after saving the plugins file
-vim.cmd [[
-    augroup packer_user_config
-        autocmd!
-        autocmd BufWritePost plugins.lua source <afile> | PackerSync
-    augroup end
-]]
-
--- error handler
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-    return
+local fn = vim.fn
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+    packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
 -- plugins
-return packer.startup(function(use)
-    use "wbthomason/packer.nvim"
-    use "nvim-lua/popup.nvim"
-    use "nvim-lua/plenary.nvim"
-    
-    use "arcticicestudio/nord-vim"
-
+return require('packer').startup(function(use)
+    use 'wbthomason/packer.nvim'
+    use 'nvim-lua/popup.nvim'
+    use 'nvim-lua/plenary.nvim'
+    use 'arcticicestudio/nord-vim'
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'neovim/nvim-lspconfig'
 
-    -- automatically set up your configuration after cloning packer.nvim
-    -- put this at the end after all plugins
-    if PACKER_BOOTSTRAP then
-        require("packer").sync()
+    -- automatically set up configuration after cloning packer.nvim
+    if packer_bootstrap then
+        require('packer').sync()
     end
 end)
