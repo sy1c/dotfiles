@@ -10,10 +10,6 @@ return require('packer').startup(function(use)
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'arcticicestudio/nord-vim'
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
@@ -22,6 +18,11 @@ return require('packer').startup(function(use)
     use 'saadparwaiz1/cmp_luasnip'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'neovim/nvim-lspconfig'
+    use 'nvim-telescope/telescope.nvim'
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
 
     -- automatically set up configuration after cloning packer.nvim
     if packer_bootstrap then
