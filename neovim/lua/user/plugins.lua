@@ -9,7 +9,6 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
-    use 'arcticicestudio/nord-vim'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
@@ -24,6 +23,8 @@ return require('packer').startup(function(use)
         run = ':TSUpdate'
     }
     use "windwp/nvim-autopairs"
+    use "kyazdani42/nvim-tree.lua"
+    use "arcticicestudio/nord-vim"
 
     -- automatically set up configuration after cloning packer.nvim
     if packer_bootstrap then
