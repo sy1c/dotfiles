@@ -24,6 +24,8 @@ return require('packer').startup(function(use)
     }
     use "windwp/nvim-autopairs"
     use "kyazdani42/nvim-tree.lua"
+    use "kyazdani42/nvim-web-devicons"
+    use "nvim-lualine/lualine.nvim"
     use "arcticicestudio/nord-vim"
 
     -- automatically set up configuration after cloning packer.nvim
