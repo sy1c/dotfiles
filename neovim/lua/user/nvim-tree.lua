@@ -1,27 +1,3 @@
-vim.g.nvim_tree_icons = { 
-    default = "",
-    symlink = "",
-    git = {
-        unstaged = "✗",
-        staged = "✓",
-        unmerged = "",
-        renamed = "➜",
-        untracked = "★",
-        deleted = "",
-        ignored = "◌"
-    },
-    folder = {
-        arrow_open = "",
-        arrow_closed = "",
-        default = "",
-        open = "",
-        empty = "",
-        empty_open = "",
-        symlink = "",
-        symlink_open = "",
-    }
-}
-
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
 require'nvim-tree'.setup {
@@ -59,11 +35,34 @@ require'nvim-tree'.setup {
                 corner = "└ ",
                 edge = "│ ",
                 none = "  ",
-            },
+           },
         },
         icons = {
             webdev_colors = true,
             git_placement = "before",
+            glyphs = {
+                default = "",
+                symlink = "",
+                git = {
+                    unstaged = "✗",
+                    staged = "✓",
+                    unmerged = "",
+                    renamed = "➜",
+                    untracked = "★",
+                    deleted = "",
+                    ignored = "◌"
+                },
+                folder = {
+                    arrow_open = "",
+                    arrow_closed = "",
+                    default = "",
+                    open = "",
+                    empty = "",
+                    empty_open = "",
+                    symlink = "",
+                    symlink_open = "",
+                },
+            },
         },
     },
     hijack_directories = {
