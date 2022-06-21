@@ -10,7 +10,7 @@
 #window {
     anchor: north west;
     location: north west;
-    width: 75%;
+    width: 100%;
     children: [ horibox ];
 }
 
