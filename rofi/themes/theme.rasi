@@ -2,29 +2,29 @@
     background-color: #D8DEE9;
     border-color: #D8DEE9;
     text-color: #2E3440;
-    font: "MesloLGM Nerd Font Mono Bold 9";
+    font: "MesloLGM Nerd Font Mono Bold 8";
     margin: 0px;
     padding: 0px;
 }
 
-#window {
+window {
     anchor: north west;
     location: north west;
     width: 100%;
     children: [ horibox ];
 }
 
-#horibox {
+horibox {
     orientation: horizontal;
     children: [ prompt, entry, listview ];
 }
 
-#listview {
+listview {
     layout: horizontal;
     lines: 100;
 }
 
-#entry {
+entry {
     expand: false;
     background-color: #2E3440;
     text-color: #ECEFF4;
@@ -32,16 +32,16 @@
     padding: 2px 8px 2px 8px;
 }
 
-#element {
+element {
     padding: 3px 16px 2px 16px;
 }
 
-#element selected {
+element selected, element-text selected, element-icon selected {
     background-color: #88C0D0;
     text-color: #2E3440;
 }
 
-#prompt {
+prompt {
     background-color: #BF616A;
     padding: 2px 8px 2px 8px;
 }
