@@ -52,7 +52,7 @@ myBar :: String
 myBar = "xmobar ~/.config/xmobar/xmobarrc"          -- xmobar configuration file
 
 myTerminal :: String
-myTerminal = "kitty"            -- set default terminal
+myTerminal = "alacritty"            -- set default terminal
 
 myBorderWidth :: Dimension
 myBorderWidth = 2               -- set border width for windows
@@ -66,14 +66,11 @@ myFocusedBorderColor = color04  -- set border color of focused windows
 
 -- workspaces -----------------------------------------------------------------
 myWorkspaces = 
-    [ " <fn=1>\xf1ce</fn> "
-    , " <fn=1>\xe5fe</fn> "
-    , " <fn=1>\xf89d</fn> "
-    , " <fn=1>\xe7a2</fn> "
-    , " <fn=1>\xf085</fn> "
-    , " <fn=1>\xfa9e</fn> "
-    , " <fn=1>\xf086</fn> "
-    , " <fn=1>\xf0c2</fn> "
+    [ " <fn=1>\xf8a3</fn> "
+    , " <fn=1>\xf8a6</fn> "
+    , " <fn=1>\xf8a9</fn> "
+    , " <fn=1>\xf8ac</fn> "
+    , " <fn=1>\xf8af</fn> "
     ]
 
 
@@ -81,7 +78,7 @@ myWorkspaces =
 myStartupHook :: X ()
 myStartupHook = do
     spawnOnce "~/.fehbg &"      -- set last saved feh wallpaper
-    spawnOnce "compton"
+    spawnOnce "picom"
     setWMName "LG3D"
 
 
@@ -111,8 +108,7 @@ myLogHook = fadeInactiveLogHook fadeAmount
 myManageHook :: ManageHook
 myManageHook = composeAll
     [ className =? "gimp" --> doFloat
-    , className =? "thunderbird" --> doShift ( myWorkspaces !! 6 )
-    , className =? "discord" --> doShift ( myWorkspaces !! 6 )
+--    , className =? "discord" --> doShift ( myWorkspaces !! 5 )
     , isDialog --> doFloat
     , isFullscreen --> doFullFloat
     ]
@@ -135,8 +131,9 @@ myKeys :: [(String, X ())]
 myKeys =
     [ ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10")
     , ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10")
-    , ("<XF86AudioLowerVolume>", spawn "amixer set Master 2%- unmute")
-    , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 2%+ unmute")
+    , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%- unmute")
+    , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+ unmute")
     , ("<XF86AudioMute>", spawn "amixer set Master toggle")
+    , ("<Print>", spawn "flameshot gui")
     , ("M-r", spawn "rofi -show drun")
     ]
