@@ -66,11 +66,11 @@ myFocusedBorderColor = color04  -- set border color of focused windows
 
 -- workspaces -----------------------------------------------------------------
 myWorkspaces = 
-    [ " <fn=1>\xf8a3</fn> "
-    , " <fn=1>\xf8a6</fn> "
-    , " <fn=1>\xf8a9</fn> "
-    , " <fn=1>\xf8ac</fn> "
-    , " <fn=1>\xf8af</fn> "
+    [ " 1 "
+    , " 2 "
+    , " 3 "
+    , " 4 "
+    , " 5 "
     ]
 
 
@@ -117,9 +117,9 @@ myManageHook = composeAll
 -- xmobar settings ------------------------------------------------------------
 myPP :: PP
 myPP = def 
-    { ppCurrent = xmobarColor color07 color01 . xmobarBorder "Top" color01 4
+    { ppCurrent = xmobarColor color07 color01 . xmobarBorder "Top" color01 2
     , ppHidden = xmobarColor color01 "" . xmobarBorder "Top" color01 2
-    , ppHiddenNoWindows = xmobarColor color01 ""
+    , ppHiddenNoWindows = xmobarColor color01 "" . xmobarBorder "Top" color01 2
     , ppOrder = \(ws:_:t:_) -> [ws,t]
     , ppSep = "  |  "
     , ppTitle = xmobarColor color01 "" . shorten 60
