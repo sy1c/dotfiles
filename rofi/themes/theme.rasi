@@ -2,7 +2,7 @@
     background-color: #D8DEE9;
     border-color: #D8DEE9;
     text-color: #2E3440;
-    font: "MesloLGM Nerd Font Mono Bold 8";
+    font: "MesloLGM Nerd Font Bold 9";
     margin: 0px;
     padding: 0px;
 }
@@ -28,12 +28,12 @@ entry {
     expand: false;
     background-color: #2E3440;
     text-color: #ECEFF4;
-    width: 15em;
-    padding: 2px 8px 2px 8px;
+    width: 10em;
+    padding: 1px 8px 0px 8px;
 }
 
 element {
-    padding: 3px 16px 2px 16px;
+    padding: 1px 16px 2px 16px;
 }
 
 element selected, element-text selected, element-icon selected {
@@ -43,5 +43,5 @@ element selected, element-text selected, element-icon selected {
 
 prompt {
     background-color: #BF616A;
-    padding: 2px 8px 2px 8px;
+    padding: 1px 8px 0px 8px;
 }
