@@ -1,7 +1,7 @@
 * {
-    background-color: #D8DEE9;
-    border-color: #D8DEE9;
-    text-color: #2E3440;
+    background-color: #15181E;
+    border-color: #15181E;
+    text-color: #DEE2ED;
     font: "MesloLGM Nerd Font Bold 9";
     margin: 0px;
     padding: 0px;
@@ -26,8 +26,9 @@ listview {
 
 entry {
     expand: false;
-    background-color: #2E3440;
-    text-color: #ECEFF4;
+    background-color: #DEE2ED;
+    text-color: #2A303C;
+    font: "MesloLGM Nerd Font 9";
     width: 10em;
     padding: 1px 8px 0px 8px;
 }
@@ -37,11 +38,11 @@ element {
 }
 
 element selected, element-text selected, element-icon selected {
-    background-color: #88C0D0;
-    text-color: #2E3440;
+    background-color: #3F485A;
+    text-color: #DEE2ED;
 }
 
 prompt {
-    background-color: #BF616A;
+    background-color: #2A303C;
     padding: 1px 8px 0px 8px;
 }

@@ -1,0 +1,5 @@
+vim.cmd "colorscheme nord"
+vim.cmd "hi! Normal guibg=#15181E guifg=#DEE2ED"
+vim.cmd "hi! EndOfBuffer guibg=#15181E guifg=#DEE2ED"
+vim.cmd "hi! SignColumn guibg=#15181E"
+vim.cmd "hi! CursorLine guibg=#2A303C"

@@ -58,10 +58,10 @@ myBorderWidth :: Dimension
 myBorderWidth = 2               -- set border width for windows
 
 myNormalBorderColor :: String
-myNormalBorderColor = color01   -- set border color of normal windows 
+myNormalBorderColor = "#15181E"   -- set border color of normal windows 
 
 myFocusedBorderColor :: String
-myFocusedBorderColor = color04  -- set border color of focused windows
+myFocusedBorderColor = "#3F485A"  -- set border color of focused windows
 
 
 -- workspaces -----------------------------------------------------------------
@@ -70,14 +70,13 @@ myWorkspaces =
     , " 2 "
     , " 3 "
     , " 4 "
-    , " 5 "
     ]
 
 
 -- startup programs -----------------------------------------------------------
 myStartupHook :: X ()
 myStartupHook = do
-    spawnOnce "~/.fehbg &"      -- set last saved feh wallpaper
+    spawnOnce "~/.config/.fehbg &"      -- set last saved feh wallpaper
     spawnOnce "picom"
     setWMName "LG3D"
 
@@ -115,15 +114,17 @@ myManageHook = composeAll
 
 
 -- xmobar settings ------------------------------------------------------------
+
+
+
 myPP :: PP
 myPP = def 
-    { ppCurrent = xmobarColor color07 color01 . xmobarBorder "Top" color01 2
-    , ppHidden = xmobarColor color01 "" . xmobarBorder "Top" color01 2
-    , ppHiddenNoWindows = xmobarColor color01 "" . xmobarBorder "Top" color01 2
+    { ppCurrent = xmobarColor "#DEE2ED" "#3F485A" . xmobarBorder "Top" "#3F485A" 2
+    , ppHidden = xmobarColor "#DEE2ED" "#2A303C" . xmobarBorder "Top" "#3F485A" 2
+    , ppHiddenNoWindows = xmobarColor "#DEE2ED" "#2A303C"
     , ppOrder = \(ws:_:t:_) -> [ws,t]
-    , ppSep = "  |  "
-    , ppTitle = xmobarColor color01 "" . shorten 60
-    , ppVisible = xmobarColor color01 "" }
+    , ppSep = "  "
+    , ppTitle = xmobarColor color05 "" . shorten 120 }
 
 
 -- keybindings ----------------------------------------------------------------

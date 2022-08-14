@@ -192,8 +192,8 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '#242933'
-    foreground: '#d8dee9'
+    background: '#15181E'
+    foreground: '#DEE2ED'
 
     # Bright and dim foreground colors
     #
@@ -201,8 +201,8 @@ colors:
     # present. If the bright foreground color is not set, or
     # `draw_bold_text_with_bright_colors` is `false`, the normal foreground
     # color will be used.
-    dim_foreground: '#a5abb6'
-    # bright_foreground: '#f8f9fb'
+    dim_foreground: '#BFC9D9'
+    bright_foreground: '#FFFFFF'
 
   # Cursor colors
   #
@@ -211,8 +211,8 @@ colors:
   # Allowed values are CellForeground/CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
   cursor:
-    text: '#2e3440'
-    cursor: '#d8dee9'
+    text: '#15181E'
+    cursor: '#DEE2ED'
 
   # Vi mode cursor colors
   #
@@ -221,8 +221,8 @@ colors:
   # Allowed values are CellForeground/CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
   vi_mode_cursor:
-    text: '#2e3440'
-    cursor: '#d8dee9'
+    text: '#15181E'
+    cursor: '#DEE2ED'
 
   # Search colors
   #
@@ -232,13 +232,13 @@ colors:
     # affected cell, or hexadecimal colors like #ff00ff.
     matches:
       foreground: CellBackground
-      background: '#88c0d0'
+      background: '#499FB6'
     #focused_match:
     #  foreground: '#ffffff'
     #  background: '#000000'
     bar:
-      background: '#434c5e'
-      foreground: '#d8dee9'
+      background: '#2A303C'
+      foreground: '#DEE2ED'
 
   # Keyboard regex hints
   #hints:
@@ -276,7 +276,7 @@ colors:
   # affected cell, or hexadecimal colors like #ff00ff.
   selection:
     text: CellForeground
-    background: '#4c566a'
+    background: '#2A303C'
 
   # Normal colors
   normal:
