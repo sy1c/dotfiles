@@ -8,5 +8,4 @@ require "user.autopairs"
 require "user.nvim-tree"
 require "user.lualine"
 require "user.keymaps"
-
-vim.cmd "colorscheme nord"
+require "user.colorscheme"

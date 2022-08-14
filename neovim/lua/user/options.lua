@@ -30,7 +30,7 @@ vim.opt.timeoutlen = 500                                    	-- time to wait for
 vim.opt.undofile = true                                     	-- enable persistent undo
 vim.opt.updatetime = 500                                    	-- time for CursorHold autocommand event
 vim.opt.wildmenu = true                                     	-- enable "enhanced menu" of command line completion
--- vim.opt.winbar = %f                                            -- extra statusline at the top of each window
+-- vim.opt.winbar = %f                                             -- extra statusline at the top of each window
 vim.opt.wrap = false                                        	-- enable text wrap
 vim.opt.writebackup = false					                    -- make a backup before overwriting a file
 
