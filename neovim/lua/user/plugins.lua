@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+    use 'lewis6991/gitsigns.nvim'                           -- Git decorations
     use 'norcalli/nvim-colorizer.lua'                       -- Color highlighter
     use 'kyazdani42/nvim-web-devicons'                      -- Icons for plugins
     use 'arcticicestudio/nord-vim'                          -- Colorscheme
