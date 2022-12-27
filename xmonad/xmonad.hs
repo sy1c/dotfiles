@@ -52,7 +52,7 @@ myBar :: String
 myBar = "xmobar ~/.config/xmobar/xmobarrc"          -- xmobar configuration file
 
 myTerminal :: String
-myTerminal = "alacritty"            -- set default terminal
+myTerminal = "kitty"            -- set default terminal
 
 myBorderWidth :: Dimension
 myBorderWidth = 2               -- set border width for windows
