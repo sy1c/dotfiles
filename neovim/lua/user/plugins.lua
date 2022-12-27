@@ -1,35 +1,49 @@
-local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+local ensure_packer = function()
+    local fn = vim.fn
+    local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+    if fn.empty(fn.glob(install_path)) > 0 then
+        fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+        vim.cmd [[packadd packer.nvim]]
+        return true
+    end
+    return false
 end
 
--- plugins
+local packer_bootstrap = ensure_packer()
+
 return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
-    use 'nvim-lua/popup.nvim'
-    use 'nvim-lua/plenary.nvim'
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'L3MON4D3/LuaSnip'
-    use 'saadparwaiz1/cmp_luasnip'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'neovim/nvim-lspconfig'
-    use 'nvim-telescope/telescope.nvim'
-    use {
+    use 'wbthomason/packer.nvim'                            -- Plugin manager
+    use 'kyazdani42/nvim-tree.lua'                          -- File explorer
+    use 'nvim-lualine/lualine.nvim'                         -- Statusline
+    use {                                                   -- Fuzzy finder
+        'nvim-telescope/telescope.nvim', branch = '0.1.x',
+        requires = {
+            'nvim-lua/plenary.nvim'
+        },
+    }
+    use 'neovim/nvim-lspconfig'                             -- LSP
+    use {                                                   -- Autocompletion
+        'hrsh7th/nvim-cmp',
+        requires = {
+            'hrsh7th/cmp-cmdline',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-nvim-lsp',
+            'L3MON4D3/LuaSnip',
+            'saadparwaiz1/cmp_luasnip'
+        },
+    }
+    use 'windwp/nvim-autopairs'                             -- Autopair plugin
+    use {                                                   -- Highlight, edit and navigate code
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
-    use "windwp/nvim-autopairs"
-    use "kyazdani42/nvim-tree.lua"
-    use "kyazdani42/nvim-web-devicons"
-    use "nvim-lualine/lualine.nvim"
-    use "arcticicestudio/nord-vim"
-    use "norcalli/nvim-colorizer.lua"
+    use 'norcalli/nvim-colorizer.lua'                       -- Color highlighter
+    use 'kyazdani42/nvim-web-devicons'                      -- Icons for plugins
+    use 'arcticicestudio/nord-vim'                          -- Colorscheme
 
-    -- automatically set up configuration after cloning packer.nvim
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
     if packer_bootstrap then
         require('packer').sync()
     end
