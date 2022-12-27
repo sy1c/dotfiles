@@ -1,0 +1,48 @@
+* {
+    background-color: #15181E;
+    border-color: #15181E;
+    text-color: #DEE2ED;
+    font: "MesloLGM Nerd Font Bold 9";
+    margin: 0px;
+    padding: 0px;
+}
+
+window {
+    anchor: north west;
+    location: north west;
+    width: 100%;
+    children: [ horibox ];
+}
+
+horibox {
+    orientation: horizontal;
+    children: [ prompt, entry, listview ];
+}
+
+listview {
+    layout: horizontal;
+    lines: 100;
+}
+
+entry {
+    expand: false;
+    background-color: #DEE2ED;
+    text-color: #2A303C;
+    font: "MesloLGM Nerd Font 9";
+    width: 10em;
+    padding: 1px 8px 0px 8px;
+}
+
+element {
+    padding: 1px 16px 2px 16px;
+}
+
+element selected, element-text selected, element-icon selected {
+    background-color: #3F485A;
+    text-color: #DEE2ED;
+}
+
+prompt {
+    background-color: #2A303C;
+    padding: 1px 8px 0px 8px;
+}
