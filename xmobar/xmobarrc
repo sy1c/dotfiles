@@ -1,11 +1,11 @@
 Config { 
     -- appearance
-      font = "xft:MesloLGM Nerd Font Mono:pixelsize=12:bold:antialias=true"
-    , additionalFonts = ["xft:MesloLGM Nerd Font Mono:pixelsize=16:antialias=true"]
-    , bgColor = "#15181E"
-    , fgColor = "#DEE2ED"
-    , position = TopW L 100
---    , textOffset = 16
+      font = "MesloLGM Nerd Font Mono Bold 12px"
+--    , additionalFonts = ["MesloLGM Nerd Font Mono 16"]
+    , bgColor = "#ECEFF4"
+    , fgColor = "#2E3440"
+    , position = Top L 100
+    , textOffset = 0
 --    , textOffsets = [18]
 
     -- general behavior
@@ -17,25 +17,50 @@ Config {
 
     -- plugins
     , commands = [
-        -- battery monitor
-        Run BatteryP ["BAT0", "BAT1"]
-            [ "-t", "<fc=#DEE2ED,#2A303C> <acstatus> </fc><fc=#DEE2ED,#3F485A> <left> </fc>"
-            , "-S", "true"
-            , "-L", "20", "-l", "#BF616A"
-            , "--"
-            , "-O", "\xf583"
-            , "-o", "\xf581"
-            , "-i", "\xf583"
-            ] 50
 
         -- network monitor
-        , Run Wireless "wlp3s0"
-            [ "-t", "<fc=#DEE2ED,#2A303C> \xfaa8 </fc><fc=#DEE2ED,#3F485A> <essid> </fc>"
+        Run Wireless "wlp3s0"
+            [ "-t", "\xf05a9 <essid>"
             , "-x", "-"
             ] 10
+    
+        -- volume monitor
+        , Run Volume "default" "Master"
+            [ "-t", "<status> <volume>"
+            , "-S", "true"
+            , "--"
+            , "-O", "\xf057e"
+            , "-o", "\xf0581"
+            , "-C", "#2E3440"
+            , "-c", "#BF616A"
+            ] 2
+        
+        -- brightness monitor
+        , Run Brightness
+            [ "-t", "\xf00de <percent>"
+            , "-S", "true"
+            , "--"
+            , "-D", "/sys/class/backlight/intel_backlight"
+            ] 2
+        
+        -- battery monitor
+        , Run BatteryN ["BAT1"]
+            [ "-t", "<acstatus> <left>"
+            , "-S", "true"
+            , "--"
+            , "-O", "<fc=#A3BE8C,#ECEFF4>\xf17e0</fc>"
+            , "-o", "\xf17de"
+            , "-i", "\xf17e0"
+            ] 10 "bat1"
                         
+        , Run BatteryN ["BAT0"]
+            [ "-t", "<left>"
+            , "-S", "true"
+            , "-L", "20", "-l", "#BF616A"
+            ] 60 "bat0"
+
         -- time and date indicator
-        , Run Date "<fc=#DEE2ED,#2A303C> \xf5ef </fc><fc=#DEE2ED,#3F485A> %Y-%m-%d %H:%M </fc>" "date" 10
+        , Run Date "<fc=#2E3440,#ECEFF4>\xf00f0</fc><fc=#2E3440,#ECEFF4> %Y-%m-%d %H:%M</fc>" "date" 10
                     
         , Run UnsafeXMonadLog
         ]
@@ -43,5 +68,5 @@ Config {
     -- layout
     , sepChar  = "%"
     , alignSep = "}{"
-    , template = "  %UnsafeXMonadLog% }{ %battery% %wlp3s0wi% %date%  "
+    , template = "  %UnsafeXMonadLog% }{ %wlp3s0wi% | %default:Master% | %bright% | %bat1% %bat0% | %date%  "
 }
