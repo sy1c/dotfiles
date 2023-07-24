@@ -14,6 +14,7 @@ import XMonad.Layout.NoBorders
 import XMonad.Layout.Renamed
 import XMonad.Layout.Spacing
 import XMonad.Layout.WindowArranger
+import XMonad.Layout.SimplestFloat
 
 import XMonad.Util.ClickableWorkspaces
 import XMonad.Util.EZConfig
@@ -58,10 +59,10 @@ myBorderWidth :: Dimension
 myBorderWidth = 2               -- set border width for windows
 
 myNormalBorderColor :: String
-myNormalBorderColor = "#15181E"   -- set border color of normal windows 
+myNormalBorderColor = color01   -- set border color of normal windows 
 
 myFocusedBorderColor :: String
-myFocusedBorderColor = "#3F485A"  -- set border color of focused windows
+myFocusedBorderColor = color04  -- set border color of focused windows
 
 
 -- workspaces -----------------------------------------------------------------
@@ -83,6 +84,7 @@ myStartupHook = do
 
 -- layouts --------------------------------------------------------------------
 tall = renamed [Replace "tall"]
+    $ avoidStruts $ windowArrange $ spacingWithEdge 4
     $ smartBorders
     $ Tall 1 (3/100) (1/2)
 
@@ -90,11 +92,11 @@ full = renamed [Replace "full"]
     $ smartBorders
     $ Full
 
-myLayoutHook = avoidStruts $ windowArrange $ spacingWithEdge 4 $ myDefaultLayout
+myLayoutHook =  myDefaultLayout
     where
         myDefaultLayout = withBorder myBorderWidth tall
-            ||| Mirror tall
             ||| full
+            ||| simplestFloat
 
 
 -- formatting tools -----------------------------------------------------------
@@ -114,17 +116,14 @@ myManageHook = composeAll
 
 
 -- xmobar settings ------------------------------------------------------------
-
-
-
 myPP :: PP
 myPP = def 
-    { ppCurrent = xmobarColor "#DEE2ED" "#3F485A" . xmobarBorder "Top" "#3F485A" 2
-    , ppHidden = xmobarColor "#DEE2ED" "#2A303C" . xmobarBorder "Top" "#3F485A" 2
-    , ppHiddenNoWindows = xmobarColor "#DEE2ED" "#2A303C"
+    { ppCurrent = xmobarColor color07 color04 . xmobarBorder "VBoth" color04 1
+    , ppHidden = xmobarColor color01 color05 . xmobarBorder "Top" color04 1 . xmobarBorder "Bottom" color05 1
+    , ppHiddenNoWindows = xmobarColor color01 color05 . xmobarBorder "VBoth" color05 1
     , ppOrder = \(ws:_:t:_) -> [ws,t]
-    , ppSep = "  "
-    , ppTitle = xmobarColor color05 "" . shorten 120 }
+    , ppSep = " | "
+    , ppTitle = xmobarColor color01 "" . shorten 120 }
 
 
 -- keybindings ----------------------------------------------------------------
