@@ -1,10 +1,10 @@
 * {
-    background-color: #15181E;
-    border-color: #15181E;
-    text-color: #DEE2ED;
-    font: "MesloLGM Nerd Font Bold 9";
+    background-color: #ECEFF4;
+    text-color: #2E3440;
+    font: "MesloLGM Nerd Font Bold 11.5px";
     margin: 0px;
     padding: 0px;
+    height: 17px;
 }
 
 window {
@@ -26,15 +26,15 @@ listview {
 
 entry {
     expand: false;
-    background-color: #DEE2ED;
-    text-color: #2A303C;
-    font: "MesloLGM Nerd Font 9";
+    background-color: #16161D;
+    text-color: #ECEFF4;
+    font: "MesloLGM Nerd Font 12px";
     width: 10em;
-    padding: 1px 8px 0px 8px;
+    padding: 0px 8px 0px 8px;
 }
 
 element {
-    padding: 1px 16px 2px 16px;
+    padding: 0px 8px 1px 8px;
 }
 
 element selected, element-text selected, element-icon selected {
@@ -42,7 +42,11 @@ element selected, element-text selected, element-icon selected {
     text-color: #DEE2ED;
 }
 
+element-icon {
+    size:   0.75em;
+}
+
 prompt {
-    background-color: #2A303C;
-    padding: 1px 8px 0px 8px;
+    background-color: #BF616A;
+    padding: 0px 8px 0px 8px;
 }
